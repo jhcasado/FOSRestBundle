@@ -13,9 +13,12 @@ namespace FOS\RestBundle\Tests\Fixtures\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Routing\ClassResourceInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class InformationController extends FOSRestController implements ClassResourceInterface
+class InformationController extends Controller implements ClassResourceInterface
 {
+    use FOSRestController;
+
     /**
      * [GET] /information.
      */

@@ -16,6 +16,7 @@ This document will be updated to list important BC breaks and behavioral changes
  * Removed ``callback_filter`` configuration option for the jsonp_handler
  * ``exception_wrapper_handler`` is now the name of a service and not the name of a class
  * removed all ``.class`` parameters, instead overwriting services via explicit Bundle configuration is preferred
+ * FOSRestController is now a trait and not longer a class extending from the core Controller class
 
 ### upgrading from 1.5.*
 

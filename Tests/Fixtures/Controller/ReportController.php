@@ -13,12 +13,15 @@ namespace FOS\RestBundle\Tests\Fixtures\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  * Class ReportController.
  */
-class ReportController extends FOSRestController
+class ReportController extends Controller
 {
+    use FOSRestController;
+
     public function getBillingSpendingsAction()
     {
     }

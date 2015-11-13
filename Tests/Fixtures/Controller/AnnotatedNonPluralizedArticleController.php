@@ -13,12 +13,15 @@ namespace FOS\RestBundle\Tests\Fixtures\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
  *  @Rest\RouteResource("Article", pluralize=false)
  */
-class AnnotatedNonPluralizedArticleController extends FosRestController
+class AnnotatedNonPluralizedArticleController extends Controller
 {
+    use FOSRestController;
+
     /**
      * [GET] /article.
      */

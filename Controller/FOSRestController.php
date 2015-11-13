@@ -12,15 +12,14 @@
 namespace FOS\RestBundle\Controller;
 
 use FOS\RestBundle\View\View;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Base Controller for Controllers using the View functionality of FOSRestBundle.
+ * Trait for Controllers using the View functionality of FOSRestBundle.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
-abstract class FOSRestController extends Controller
+trait FOSRestController
 {
     /**
      * Creates a view.
@@ -83,6 +82,16 @@ abstract class FOSRestController extends Controller
      */
     protected function handleView(View $view)
     {
-        return $this->get('fos_rest.view_handler')->handle($view);
+        return $this->getViewHandler()->handle($view);
+    }
+
+    /**
+     * Get the ViewHandler
+     *
+     * @return View
+     */
+    protected function getViewHandler()
+    {
+        return $this->get('fos_rest.view_handler');
     }
 }
